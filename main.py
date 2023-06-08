@@ -1,10 +1,10 @@
 from __future__ import print_function
-import requests
 import asyncio
-import aiohttp
 import os
 import sys
 import time
+import requests
+import aiohttp
 
 # Import all necessary google api libraries
 from google.auth.transport.requests import Request
@@ -39,7 +39,7 @@ def get_sample_response():
             "X-API-TOKEN": f"{User.api_token}"
         }
 
-        response = requests.request("GET", url, headers=headers)
+        response = requests.request("GET", url, headers=headers, timeout=10)
 
         print(response.status_code)
         print(response.text)
@@ -70,7 +70,7 @@ def sheets_scrap() -> dict:
     # created automatically when the authorization flow completes for the first time.
     if os.path.exists('token.json'):
         creds = Credentials.from_authorized_user_file('token.json', SCOPES)
-    #quickstart.py notes: If there are no (valid) credentials available, let the user log in.
+    # quickstart.py notes: If there are no (valid) credentials available, let the user log in.
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())

@@ -91,6 +91,7 @@ def sheets_scrap() -> dict:
         
         try:
             # Pulled from the quickstart.py file
+            # Remove the placeholder values here
             SAMPLE_SPREADSHEET_ID = 'google_spreadsheet_id'
             SAMPLE_RANGE_NAME = f'Sheet1!A{index}:B{index}'
             

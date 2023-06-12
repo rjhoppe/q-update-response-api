@@ -23,7 +23,7 @@ Project is created with:
 * asyncio, requests, aiohttp Python libraries
 	
 ## Setup
-To run this project, install it locally using npm:
+To run this program, install it locally using npm:
 
 ```
 $ cd ../lorem
